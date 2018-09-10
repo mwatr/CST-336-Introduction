@@ -1,0 +1,57 @@
+body {
+    background-color:black;
+    color:grey;
+}
+
+header, main, nav, footer {
+    text-align:center;
+}
+
+nav a:hover {
+    padding:15px;
+    padding-bottom:4px;
+    font-size:1.8em;
+    text-decoration:none;
+    color:white;
+}
+
+#Me, #welcomeText {
+    float:left;
+}
+
+footer {
+    clear:left;
+    color:blue;
+}
+
+table {
+    margin: 10px auto;
+    font-size: 1.3em;
+}
+
+td strong {
+    color: pink;
+}
+
+#table-header {
+    background-color: #FFFF33;
+}
+
+.table-row {
+    background-color: #45F023;
+}
+
+ul {
+    text-align: left;
+    padding-left: 200px;
+}
+
+.hobby {
+    color: #F09323;
+}
+
+h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
