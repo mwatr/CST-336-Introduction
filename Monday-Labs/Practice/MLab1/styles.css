@@ -1,0 +1,21 @@
+nav a:hover {
+    padding:15px;
+    padding-bottom:8px;
+    font-size:2em;
+    text-decoration:none;
+    color:black;
+}
+
+.row.columns{
+    clear: both;
+}
+
+.columns {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.row {
+    margin-left:-15px;
+    margin-right:15px;
+}
