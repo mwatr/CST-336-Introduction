@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title> </title>
+        <title>Michael's Assignments</title>
     </head>
     <body>
+      <hr>
       <h1>Labs</h1>
-      <h2>Lab 1:</h2>
-      <a href = "Labs/portfolio/index.html">Lab 1: Portfolio</a>
-      <h2>Lab 2:</h2>
-      <a href = "Labs/Lab2/777/index.php">Lab 2: Slot Machine</a>
+      <a href = "Labs/portfolio/index.html"><h2>Lab 1: Portfolio</h2></a>
+      <a href = "Labs/Lab2/777/index.php"><h2>Lab 2: Slot Machine</h2></a>
+      
+      <hr>
       <h1>Homework</h1>
+      <a href = "Homework/HW1/page1.html"><h2>Homework 1: Linked Lists</h2></a>
+      <a><h2>Homework 2: Something Special</h2></a>
       
     </body>
 </html>

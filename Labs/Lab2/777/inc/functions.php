@@ -1,5 +1,5 @@
 <?php
-
+        
         function play_the_game() {
           $totalPoints = 0;
           for ($n = 0; $n < 3; ++$n) {

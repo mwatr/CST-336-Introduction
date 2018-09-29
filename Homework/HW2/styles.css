@@ -1,0 +1,21 @@
+body {
+    background-color:#0ec0f1;
+}
+
+h1 {
+    font-family:'Oswald', bold;
+    font-size: 4em;
+    margin-bottom: 0px;
+}
+
+#random {
+    font-family:'Cinzel', italic;
+    font-size: 16em;
+    margin-right: 10px;
+}
+
+.total {
+    font-family:'Cinzel', bold;
+    font-size: 16em;
+    margin-right: 100px;
+}
