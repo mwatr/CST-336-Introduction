@@ -12,7 +12,7 @@
       <hr>
       <h1>Homework</h1>
       <a href = "Homework/HW1/page1.html"><h2>Homework 1: Linked Lists</h2></a>
-      <a><h2>Homework 2: Something Special</h2></a>
+      <a href = "Homework/HW2/index.php"><h2>Homework 2: Something Special</h2></a>
       
     </body>
 </html>
