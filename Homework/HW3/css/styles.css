@@ -1,0 +1,27 @@
+body {
+    background-color:#00ff80;
+    
+}
+
+h2 {
+    color: #00bfff;
+}
+
+#purpose {
+    font-family:'Oswald', bold;
+    font-size: 5em;
+    color: #0eb2c8;
+}
+
+#random {
+    font-family:'Cinzel', italic;
+    font-size: 5em;
+    color: #ff33ff;
+    margin-right: 10px;
+}
+
+#sum {
+    font-size:3em;
+    color:#ffff1a;
+}
+
