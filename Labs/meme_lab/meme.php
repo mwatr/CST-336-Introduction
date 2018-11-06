@@ -1,5 +1,5 @@
 <?php 
-  include '../../database.php'; 
+  include 'database.php'; 
   
   function createMeme($line1, $line2, $memetype) {
     
