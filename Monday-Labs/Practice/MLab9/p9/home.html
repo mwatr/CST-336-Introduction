@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Monday Lab 9</title>
+        <style>
+            body {
+                background-color:#0099ff;
+                text-align: center;
+            }
+            table {
+                width: 30%;
+                margin: auto;
+            }
+            table, th, td {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+
+            th, td {
+                padding: 5px;
+            }
+
+            th {
+                text-align: left;
+            }
+            
+            #accept_terms {
+                color:#cc0000;
+                font-size:1.5em;
+            }
+            input {
+                width: 100%;
+            }
+            #submit {
+                width: 10%;
+            }
+        </style>
+        <script src="engine.js" language="javascript" type="text/javascript"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        
+    </head>
+    <body>
+        <table>
+            <tr>
+               <th>Product</th>
+               <th>Unit Price</th>
+               <th>Quantity</th>
+               <th>Total</th>
+            </tr>
+            <tr>
+               <td>Fruit Cake</td>
+               <td>$30</td>
+               <td><input type = "text" id = "fruitCakeNum" onChange="update()"></td> <!--input type = "text" -->
+               <td id = "fruitCakeTotal"></td>
+            </tr>
+            <tr>
+               <td>Piñata</td>
+               <td>$20</td>
+               <td><input type="text" id="pinataNum" onChange="update()"></td>
+               <td id = "pinataCakeTotal"></td>
+            </tr>
+            <tr>
+                <td>Shipping</td>
+                <td></td>
+                <td></td>
+                <td id="shippingTotal"></td>
+            </tr>
+            <tr>
+                <td>Subtotal</td>
+                <td></td>
+                <td></td>
+                <td id="subtotal"></td>
+            </tr>
+            <tr>
+                <td>Tax(10%)</td>
+                <td></td>
+                <td></td>
+                <td id="tax"></td>
+            </tr>
+            <tr>
+                <td>Total</td>
+                <td></td>
+                <td></td>
+                <td id="total"></td>
+            </tr>
+        </table>
+        <h2>Shipping & Handling</h2>
+        <input type = "radio" id="shippingFTeen" name = "Shipping" value = "15" onCHange="update()">Next-Day Delivery: $15<br/>
+        <input type = "radio" id="shippingTen" name = "Shipping" value = "10" onCHange="update()">Three-Day Delivery: $10</br>
+        <input type = "radio" id="shippingFive" name = "Shipping" value = "5" onCHange="update()">Regular shipping (5-8 days): $5</br></br>
+        <input type = "checkbox" name = "accept_Here" id = "accept" value = "1"><span id = "accept_terms">I accept the terms of this purchase.</span>
+        <br/><input type = "button" id="submit" name = "confirm" value = "CONFIRM PURCHASE">
+    </body>
+</html>

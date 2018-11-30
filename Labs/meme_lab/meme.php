@@ -14,7 +14,12 @@
       
     $dbConn = getDatabaseConnection("generate_memes");
     
-    $sql = "INSERT INTO `all_memes` (`id`, `line1`, `line2`, `meme_type`, `meme_url`) VALUES (NULL, '$line1', '$line2', '$memetype', '$memeURL')"; 
+    //$sql = "INSERT INTO `all_memes` (`id`, `line1`, `line2`, `meme_type`, `meme_url`) VALUES (NULL, '$line1', '$line2', '$memetype', '$memeURL')"; 
+    $sql = "INSERT INTO `all_memes` 
+      (`id`, `line1`, `line2`, `meme_type`, `meme_url`, `create_date`) 
+      VALUES 
+      (NULL, '$line1', '$line2', '$memeType', '$memeURL', NOW());"; 
+
     
     $statement = $dbConn->prepare($sql);
     $result = $statement->execute(); 
@@ -37,31 +42,27 @@
   }
   
   function displayMemes() {
-    $dbConn = getDatabaseConnection("generate_memes"); 
-    
-    $sql = "SELECT * from all_memes WHERE 1";
-    
-    // echo "POST: "; 
-    // print_r($_POST);
-    // echo "<br/>";
+    $dbConn = getDatabaseConnection();
+    $sql = "SELECT * from all_memes WHERE 1"; 
     
     if(isset($_POST['search']) && !empty($_POST['search'])) {
       // query the databse for any records that match this search
-      //$sql = "SELECT * from all_memes WHERE line1 LIKE '%{$_POST['search']}%' OR line2 LIKE '%{$_POST['search']}%'";
-    
-      $sql = " AND (line1 LIKE '%{$_POST['search']}%' OR line2 LIKE '%{$_POST['search']}%')";  
-    
-      //echo "********* sql: $sql <br/>"; 
+      $sql .= " AND (line1 LIKE '%{$_POST['search']}%' OR line2 LIKE '%{$_POST['search']}%')";
     } 
     
     if(isset($_POST['meme-type']) && !empty($_POST['meme-type'])) {
-      $sql = " AND meme_type = '{$_POST['meme-type']}'"; 
+      $sql .= " AND meme_type = '{$_POST['meme-type']}'"; 
     }
     
-    //else {
-    //   $sql = "SELECT * from all_memes";  
-    // }
-    //echo "sql: $sql <br/>";
+    if(isset($_POST['order-by-date'])) {
+      $sql .= " ORDER BY create_date"; 
+      
+      if ($_POST['order-by-date'] == 'newest-first') {
+        $sql .= " DESC"; 
+      }
+    }
+
+
     $statement = $dbConn->prepare($sql); 
     
     $statement->execute(); 
@@ -80,6 +81,19 @@
 if (isset($_POST['line1']) && isset($_POST['line2'])) {
   $memeObj = createMeme($_POST['line1'], $_POST['line2'], $_POST['meme_type']);
 }
+
+//Second line to be executed...?
+if(isset($_POST['search'])) {
+  // query the databse for any records that match this search
+  $dbConn = getDatabaseConnection(); 
+  $sql = "SELECT * from all_memes WHERE line1 = '{$_POST['search']}'";
+  
+  $statement = $dbConn->prepare($sql); 
+  
+  $statement->execute(); 
+  $records = $statement->fetchAll(); 
+}
+
 
 ?>
 <!DOCTYPE html>
@@ -120,7 +134,7 @@ if (isset($_POST['line1']) && isset($_POST['line2'])) {
     </style>
   </head>
   <body>
-    <?php if($memeObj) { ?>
+    <?php if(isset($_POST['line1']) && isset($_POST['line2'])) { ?>
     <h1>Your Meme</h1>
     <!--The image needs to be rendered for each new meme
     so set the div's background-image property inline-->
@@ -135,6 +149,10 @@ if (isset($_POST['line1']) && isset($_POST['line2'])) {
       <div style="clear:both"></div>
     </div>
     <h1>All memes previous generated</h1>
-    
+    <form method="post" action="meme.php">
+        Search:  <input type="text" name="search"></input> 
+        <input type="submit"></input>
+    </form>
+
   </body>
 </html>

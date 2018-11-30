@@ -24,10 +24,16 @@
           <option value="dragon">Dragon</option>
           <option value="muraena">Moray Eel</option>
         </select>
+        <br/>
+        
+        <input type="radio" name="order-by-date" value="newest-first"> Newest first 
+        <input type="radio" name="order-by-date" value="oldest-first"> Oldest first
+        
+        <br>
 
         <input type="submit"></input>
     </form>
-    
+
     <a href="./meme.php">View all memes</a>
     
   </body>

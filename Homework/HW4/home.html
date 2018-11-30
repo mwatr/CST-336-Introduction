@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Homework 4</title>
+        <meta char="utf-8" />
+        <link href="css/styles.css" rel="stylesheet" type="text/css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script scr="functions.js" language="javascript" type="text/javascript"></script>
+    </head>
+    <body>
+        <h2>A recreation of Homework 3 with Javascript and JQuery. Right-click and 'inspect' for details.</h2>
+        <h3>Let's generate some random numbers!</h3>
+        <h3>How many numbers do you want in your array?</h3>
+          <input type = "text" name = "count" id = "parameter_1"></input>
+          <br>
+          <h3>What is the range of your generated numbers?</h3>
+          <input type = "text" name = "range" id = "parameter_2"></input>
+          <br><br>
+          <button onclick = "generateNumbers(parameter_1, parameter_2)">Generate!</button>
+          <p id = "loop"></p>
+    </body>
+</html>
