@@ -12,7 +12,7 @@
       <a href = "Labs/Lab2/777/index.php"><h2>Lab 2: Slot Machine</h2></a>
       <a href = "https://alex-alkire-cst-336-lab3.herokuapp.com/"><h2>Lab 3: Silverjack Card Game</h2></a> 
       <a href = "Labs/Lab4/Slider/index.php"><h2>Lab 4: Slider</h2></a>
-      <h2>Lab 5: Shopping Cart Tutorial</h2>
+      <a href = "Labs/Lab5/index.php"><h2>Lab 5: Shopping Cart Tutorial</h2></a>
       <a href = "Labs/meme_lab/welcome.php"><h2>Lab 6: Meme Lab</h2></a>
       <a href = "Labs/meme_lab_part2/index.php"><h2>Lab 7: Meme Lab (Part 2)</h2></a>
       <h2>Lab 8: Hangman</h2>

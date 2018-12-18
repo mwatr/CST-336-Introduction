@@ -1,15 +1,38 @@
 <?php
     include 'functions.php';
+    session_start();
+    
+    if(!isset($_SESSION['cart'])) { $_SESSION['cart'] = array(); }
+    //if(isset($_POST['itemName'])) { array_push($_SESSION['cart'], $_POST['itemName']);}
 
     if(isset($_GET['query'])) {
         //Get API Function
         include 'wmapi.php';
         $items = getProducts($_GET['query']);
-        print_r($items);
+    }
+    
+    if(isset($_POST['itemName'])) { 
+        //array_push($_SESSION['cart'], $_POST['itemName']);
+        $newItem = array();
+        $newItem['name'] = $_POST['itemName'];
+        $newItem['price'] = $_POST['itemPrice'];
+        $newItem['img'] = $_POST['itemImg'];
+        $newItem['id'] = $_POST['itemId'];
+        
+        foreach($_SESSION['cart'] as &$item) {
+            if($newItem['id'] == $item['id']) {
+                $item['quantity'] += 1;
+                $found = true;
+            }
+        }
+        
+        if($found != true) {
+            $newItem['quantity'] = 1;
+            array_push($_SESSION['cart'], $newItem);
+        }
     }
 ?>
 
-<?php displayResults(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +73,7 @@
             </form>
             
             <!-- Display Search Results -->
-            
+            <?php displayResults(); ?>
         </div>
     </div>
     </body>
