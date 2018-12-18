@@ -1,3 +1,7 @@
 body {
     background-color:#ff8080;
 }
+
+#won, #lost {
+    display: none;
+}
